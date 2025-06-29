@@ -1,0 +1,12 @@
+{
+  "aprobadas": [
+    "matematica_i",
+    "organizacion_de_computadoras",
+    "programacion_con_objetos_i",
+    "estructuras_de_datos",
+    "matematica_ii",
+    "introduccion_a_la_programacion"
+  ],
+  "inscripcion_registrada": true,
+  "aviso_cuatrimestre_enviado": true
+}
