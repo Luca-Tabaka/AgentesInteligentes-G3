@@ -47,18 +47,6 @@ Un **agente inteligente** es un software que:
 
 ---
 
-## Propiedades adicionales
-
-- **Movilidad**: puede moverse dentro de una red para realizar tareas.
-- **Veracidad**: dice la verdad (no da información falsa intencionalmente).
-- **Benevolencia**: actúa con buenas intenciones, sin objetivos en contra del usuario.
-- **Racionalidad**: actúa para lograr sus objetivos, no para sabotearse.
-- **Aprendizaje**: mejora con el tiempo, como si "aprendiera" de lo que hace.
-
-> No todos los agentes tienen todas estas capacidades. Depende de para qué fueron diseñados.
-
----
-
 ## ¿Cómo se clasifican los Agentes?
 
 Se pueden clasificar según lo que pueden hacer:
@@ -87,11 +75,3 @@ Imaginá un agente como un ayudante digital que:
 - Cambia su comportamiento si algo no funciona bien.
 
 Es como tener un software que trabaja por vos, entiende tus preferencias y se adapta.
-
----
-
-## Conclusión
-
-Los **agentes inteligentes** son programas avanzados que actúan, razonan, aprenden y colaboran. Están en muchas aplicaciones modernas y son una parte esencial del desarrollo de la inteligencia artificial.
-
-> Son más que simples programas: tienen la capacidad de pensar, adaptarse y actuar por vos.
