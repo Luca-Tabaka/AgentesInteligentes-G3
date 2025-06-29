@@ -1,64 +1,97 @@
-# Agentes Inteligentes
+# Agentes Inteligentes - Explicación Sencilla
 
 ## ¿Qué es un Agente?
 
-Un **agente** es un programa de software que puede realizar una acción específica, tomando decisiones por sí mismo. Es decir, **actúa de forma autónoma** y puede interactuar con su entorno.
+Un **agente** es un programa que puede realizar una acción por sí mismo, sin que alguien tenga que decirle todo el tiempo qué hacer. Puede interactuar con su entorno y tomar decisiones.
 
-### Ejemplos de agentes:
-- Robots (como los que limpian solos)
-- Softbots (programas que navegan por internet)
-- Termostatos inteligentes (ajustan la temperatura automáticamente)
-
----
-
-## ¿Qué es la Lógica?
-
-La **lógica** es una ciencia que estudia cómo pensamos. Se usa para analizar proposiciones y razonamientos. Gracias a ella, podemos saber si algo es **verdadero o falso**.
+### Ejemplos comunes:
+- Un robot que limpia la casa.
+- Un programa que recomienda películas.
+- Un termostato que ajusta solo la temperatura.
 
 ---
 
-## ¿Cómo se relacionan el Agente y la Lógica?
+## ¿Qué es un Agente Inteligente?
 
-Cuando un agente utiliza reglas lógicas para decidir qué hacer, se llama **agente lógico**.
+Un **agente inteligente** es un software que:
+- Ayuda a las personas.
+- Aprende de lo que hacemos.
+- Puede hacer tareas en nuestro nombre.
+- Toma decisiones de forma autónoma (por sí solo).
 
-Un **agente lógico**:
-- Representa conocimiento del mundo con estructuras lógicas.
-- Usa ese conocimiento para razonar y tomar decisiones.
-- Se adapta a su entorno y actúa en consecuencia.
+### Características de un Agente Inteligente:
+
+1. **Autonomía**  
+   Puede actuar por su cuenta y controlar su estado interno.
+
+2. **Reactividad**  
+   Está atento a su entorno y responde a los cambios rápidamente.
+
+3. **Proactividad**  
+   Tiene objetivos propios y toma la iniciativa para cumplirlos.
+
+4. **Habilidad social**  
+   Puede comunicarse con otros agentes o personas.
+
+5. **Cooperación**  
+   Trabaja junto con otros agentes para alcanzar objetivos.
+
+6. **Razonamiento**  
+   Puede pensar y sacar conclusiones basadas en lo que sabe.
+
+7. **Adaptación**  
+   Aprende de la experiencia y mejora su comportamiento.
+
+8. **Integridad**  
+   El usuario debe poder confiar en que actuará con sinceridad y en su beneficio.
 
 ---
 
-## Partes Principales de un Agente Lógico
+## Propiedades adicionales
 
-### 📦 Memoria de Trabajo
-Guarda lo que el agente "sabe" sobre el entorno y sobre sí mismo. Es como su memoria.
+- **Movilidad**: puede moverse dentro de una red para realizar tareas.
+- **Veracidad**: dice la verdad (no da información falsa intencionalmente).
+- **Benevolencia**: actúa con buenas intenciones, sin objetivos en contra del usuario.
+- **Racionalidad**: actúa para lograr sus objetivos, no para sabotearse.
+- **Aprendizaje**: mejora con el tiempo, como si "aprendiera" de lo que hace.
 
-### ⚙️ Máquina de Inferencia
-Es el motor del razonamiento. Usa la lógica para decidir qué acción tomar. Aplica reglas del tipo:
-> "Si pasa esto, entonces hacé esto otro."
+> No todos los agentes tienen todas estas capacidades. Depende de para qué fueron diseñados.
 
 ---
 
-## ¿Por qué es importante?
+## ¿Cómo se clasifican los Agentes?
 
-Los agentes lógicos son una parte fundamental de la **inteligencia artificial**. Nos permiten crear programas que:
-- Razonan como humanos (al menos en parte).
-- Toman decisiones con base en datos y reglas.
-- Aprenden o se ajustan a diferentes situaciones.
+Se pueden clasificar según lo que pueden hacer:
+- Algunos solo hacen tareas simples.
+- Otros se comunican entre sí y cooperan.
+- Algunos aprenden con el tiempo y se adaptan a lo que necesitan los usuarios.
 
 ---
 
 ## Ejemplo simple:
 
-Imaginá un agente lógico que controla las luces de una casa:
-- Si detecta que hay alguien en la habitación **y** está oscuro, **enciende la luz**.
-- Si no hay nadie, **apaga la luz**.
+Un agente inteligente podría ser un asistente virtual que:
+- Aprende tus gustos musicales.
+- Te recomienda nuevas canciones.
+- Se adapta si un día preferís música más tranquila.
+- Habla con otros sistemas para mostrarte eventos en tu ciudad.
 
-Esto lo hace siguiendo reglas lógicas, sin que nadie tenga que decirle qué hacer cada vez.
+---
+
+## Diagrama (explicación)
+
+Imaginá un agente como un ayudante digital que:
+- Tiene sus propios objetivos.
+- Se comunica con otros ayudantes.
+- Aprende de lo que pasa a su alrededor.
+- Cambia su comportamiento si algo no funciona bien.
+
+Es como tener un software que trabaja por vos, entiende tus preferencias y se adapta.
 
 ---
 
 ## Conclusión
 
-Un **agente lógico** combina lógica y autonomía para razonar y actuar de forma inteligente. Es una idea clave para entender cómo funcionan muchos sistemas modernos, desde asistentes virtuales hasta autos autónomos.
+Los **agentes inteligentes** son programas avanzados que actúan, razonan, aprenden y colaboran. Están en muchas aplicaciones modernas y son una parte esencial del desarrollo de la inteligencia artificial.
 
+> Son más que simples programas: tienen la capacidad de pensar, adaptarse y actuar por vos.
