@@ -4,7 +4,7 @@
 
 Un **agente** es un programa que puede realizar una acción por sí mismo, sin que alguien tenga que decirle todo el tiempo qué hacer. Puede interactuar con su entorno y tomar decisiones.
 
-### Ejemplos comunes:
+### Algunos ejemplos pueden ser:
 - Un robot que limpia la casa.
 - Un programa que recomienda películas.
 - Un termostato que ajusta solo la temperatura.
