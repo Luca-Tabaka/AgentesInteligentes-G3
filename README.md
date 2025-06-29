@@ -1,4 +1,4 @@
-# Agentes Lógicos - Explicación Simple
+# Agentes Inteligentes
 
 ## ¿Qué es un Agente?
 
