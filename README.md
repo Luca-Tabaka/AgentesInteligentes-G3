@@ -17,7 +17,7 @@ Un **agente inteligente** es un software que:
 - Ayuda a las personas.
 - Aprende de lo que hacemos.
 - Puede hacer tareas en nuestro nombre.
-- Toma decisiones de forma autónoma (por sí solo).
+- Toma decisiones de forma autónoma, es decir, por si mismo.
 
 ### Características de un Agente Inteligente:
 
