@@ -70,7 +70,7 @@ Se pueden clasificar según lo que pueden hacer:
 
 ## Ejemplo simple:
 
-Un agente inteligente podría ser un asistente virtual que:
+Un agente inteligente podría ser el asistente de Spotify:
 - Aprende tus gustos musicales.
 - Te recomienda nuevas canciones.
 - Se adapta si un día preferís música más tranquila.
