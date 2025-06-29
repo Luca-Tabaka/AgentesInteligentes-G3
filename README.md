@@ -4,7 +4,7 @@
 
 Un **agente** es un programa que puede realizar una acción por sí mismo, sin que alguien tenga que decirle todo el tiempo qué hacer. Puede interactuar con su entorno y tomar decisiones.
 
-### Ejemplos comunes:
+### Algunos ejemplos pueden ser:
 - Un robot que limpia la casa.
 - Un programa que recomienda películas.
 - Un termostato que ajusta solo la temperatura.
@@ -17,7 +17,7 @@ Un **agente inteligente** es un software que:
 - Ayuda a las personas.
 - Aprende de lo que hacemos.
 - Puede hacer tareas en nuestro nombre.
-- Toma decisiones de forma autónoma (por sí solo).
+- Toma decisiones de forma autónoma, es decir, por si mismo.
 
 ### Características de un Agente Inteligente:
 
@@ -47,18 +47,6 @@ Un **agente inteligente** es un software que:
 
 ---
 
-## Propiedades adicionales
-
-- **Movilidad**: puede moverse dentro de una red para realizar tareas.
-- **Veracidad**: dice la verdad (no da información falsa intencionalmente).
-- **Benevolencia**: actúa con buenas intenciones, sin objetivos en contra del usuario.
-- **Racionalidad**: actúa para lograr sus objetivos, no para sabotearse.
-- **Aprendizaje**: mejora con el tiempo, como si "aprendiera" de lo que hace.
-
-> No todos los agentes tienen todas estas capacidades. Depende de para qué fueron diseñados.
-
----
-
 ## ¿Cómo se clasifican los Agentes?
 
 Se pueden clasificar según lo que pueden hacer:
@@ -70,7 +58,7 @@ Se pueden clasificar según lo que pueden hacer:
 
 ## Ejemplo simple:
 
-Un agente inteligente podría ser un asistente virtual que:
+Un agente inteligente podría ser el asistente de Spotify:
 - Aprende tus gustos musicales.
 - Te recomienda nuevas canciones.
 - Se adapta si un día preferís música más tranquila.
@@ -87,11 +75,3 @@ Imaginá un agente como un ayudante digital que:
 - Cambia su comportamiento si algo no funciona bien.
 
 Es como tener un software que trabaja por vos, entiende tus preferencias y se adapta.
-
----
-
-## Conclusión
-
-Los **agentes inteligentes** son programas avanzados que actúan, razonan, aprenden y colaboran. Están en muchas aplicaciones modernas y son una parte esencial del desarrollo de la inteligencia artificial.
-
-> Son más que simples programas: tienen la capacidad de pensar, adaptarse y actuar por vos.
