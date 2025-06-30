@@ -5,7 +5,7 @@ ESTADO_PATH = Path(__file__).parent / "estado.json"
 
 def cargar_estado():
     if not ESTADO_PATH.exists():
-        return {"aprobadas": [], "inscripcion_registrada": False, "aviso_cuatrimestre_enviado": False}
+        return {"aprobadas": [], "inscripcion_registrada": False, "aviso_cuatrimestre_enviado": False, "inscriptas": []}
     with open(ESTADO_PATH, "r") as f:
         return json.load(f)
 

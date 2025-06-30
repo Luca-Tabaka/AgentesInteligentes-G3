@@ -1,124 +1,230 @@
+"""
+Agente Académico - Sistema de gestión académica inteligente
+Proporciona funcionalidades para gestionar materias, inscripciones y recomendaciones.
+"""
+
+from datetime import date, datetime
+
+from prolog_interface import (
+    puede_cursar, 
+    recomendar_materias, 
+    materias_disponibles_por_anio
+)
 from utils import cargar_estado, agregar_aprobadas, guardar_estado
-from prolog_interface import puede_cursar, recomendar_materias, materias_disponibles_por_anio
-from datetime import datetime
 
-from datetime import date
-
+# Constantes de fechas del cuatrimestre
 INICIO_CUATRIMESTRE = date(2025, 7, 1)
 INICIO_INSCRIPCION = date(2025, 7, 5)
 FIN_INSCRIPCION = date(2025, 7, 10)
 
+# Configuración de fecha actual para pruebas
 # hoy = date.today()
-# hoy = datetime(2025, 7, 1).date() # Inicio cuatrimestre
-hoy = datetime(2025, 7, 5).date() # Inicio inscripción
+# hoy = datetime(2025, 7, 1).date()  # Para pruebas - inicio cuatrimestre
+hoy = datetime(2025, 7, 5).date()  # Para pruebas - inicio inscripción
+
+# Opciones del menú principal
+OPCIONES_MENU = {
+    "1": "Ver materias aprobadas",
+    "2": "Agregar materias aprobadas", 
+    "3": "Consultar si puedo cursar una materia",
+    "4": "Ver materias disponibles por año",
+    "5": "Ver materias recomendadas",
+    "6": "Salir"
+}
+
+def mostrar_materias_disponibles(materias_por_anio):
+    # Muestra las materias disponibles agrupadas por año.
+    if not materias_por_anio:
+        print("\n❌ No hay materias disponibles por ahora.\n")
+        return
+    
+    print("\n📚 Estas son las materias que podrías cursar:\n")
+    for anio, materias in materias_por_anio:
+        if materias:
+            print(f"📅 Año {anio}:")
+            for materia in materias:
+                print(f"   - {materia}")
+
+
+def procesar_inscripcion_automatica(estado, recomendadas):
+    # Procesa la inscripción automática a materias recomendadas.
+    print("\n💡 Te recomiendo que curses estas materias:")
+    for materia in recomendadas:
+        print(f" ⭐ {materia}")
+
+    opcion = input("\n✨ ¿Querés que te inscriba a estas materias? (s/n): ").strip().lower()
+    
+    if opcion == "s":
+        estado["inscriptas"] = recomendadas
+        estado["inscripcion_registrada"] = True
+        guardar_estado(estado)
+        print("🎉 ¡Inscripción realizada con éxito!")
+        return True
+    return False
+
+
+def procesar_inscripcion_manual(estado):
+    # Procesa la inscripción manual de materias.
+    materias_input = input("📝 Ingresá las materias que querés cursar (separadas por coma): ")
+    materias_personalizadas = [m.strip() for m in materias_input.split(",") if m.strip()]
+    
+    inscriptas_validas = []
+    for materia in materias_personalizadas:
+        if puede_cursar(materia, estado["aprobadas"]):
+            inscriptas_validas.append(materia)
+        else:
+            print(f"❌ No podés cursar {materia} todavía (no cumple correlativas).")
+
+    if inscriptas_validas:
+        estado["inscriptas"] = inscriptas_validas
+        guardar_estado(estado)
+        print(f"✅ Te inscribí a las materias válidas: {inscriptas_validas}")
+    else:
+        print("😞 No te pude inscribir a ninguna materia.")
+
 
 def chequear_inicio_cuatrimestre():
+    # Verifica si es el inicio del cuatrimestre y muestra materias disponibles.
     estado = cargar_estado()
 
     if hoy == INICIO_CUATRIMESTRE and not estado.get("aviso_cuatrimestre_enviado", False):
-        print("📢 Comienza un nuevo cuatrimestre.")
+        print("🎓 ¡Comienza un nuevo cuatrimestre!")
         disponibles = materias_disponibles_por_anio(estado["aprobadas"])
-
-        if disponibles:
-            print("Estas son las materias que podrías cursar:")
-            for anio, materias in disponibles:
-                if materias:
-                    print(f"Año {anio}:")
-                    for m in materias:
-                        print(f"   - {m}")
-        else:
-            print("No hay materias disponibles por ahora.")
+        mostrar_materias_disponibles(disponibles)
+        
         estado["aviso_cuatrimestre_enviado"] = True
         guardar_estado(estado)
 
-def chequear_inscripcion_automatica():
+
+def chequear_inscripcion():
+    # Verifica si es período de inscripción y ofrece inscripción automática.
+    if not (INICIO_INSCRIPCION <= hoy <= FIN_INSCRIPCION):
+        return
+        
     estado = cargar_estado()
+    if estado.get("inscripcion_registrada", True):
+        return
 
-    if INICIO_INSCRIPCION <= hoy <= FIN_INSCRIPCION and not estado.get("inscripcion_registrada", False):
-        rec = recomendar_materias(estado["aprobadas"])
-        if rec:
-            print("📝 El agente te inscribió automáticamente a:")
-            for m in rec:
-                print(f"  - {m}")
-            estado["inscripcion_registrada"] = True
-            guardar_estado(estado)
-        else:
-            print("📝 No hay materias para inscribirse este cuatrimestre.")
+    print("📝 ¡Es tiempo de inscripciones!")
+    
+    opcion = input("\n🤔 ¿Querés que te inscriba ahora? (s/n): ").strip().lower()
+    if opcion == "n":
+        return
 
-            
+    materias_por_anio = materias_disponibles_por_anio(estado["aprobadas"])
+    recomendadas = recomendar_materias(estado["aprobadas"])
+
+    if materias_por_anio:
+        print("\n📚 Estas son las materias que podrías cursar:\n")
+        mostrar_materias_disponibles(materias_por_anio)
+
+    if not recomendadas:
+        print("❌ No hay materias para inscribirse.")
+        return
+
+    if not procesar_inscripcion_automatica(estado, recomendadas):
+        procesar_inscripcion_manual(estado)
 
 
 
 def mostrar_menu():
-    print("\n--- Agente Académico ---")
-    print("1. Ver materias aprobadas")
-    print("2. Agregar materias aprobadas")
-    print("3. Consultar si puedo cursar una materia")
-    print("4. Ver materias disponibles por año")
-    print("5. Ver materias recomendadas")
-    print("6. Salir")
+    # Muestra el menú principal de opciones.
+    print("\n🤖 --- Agente Académico ---")
+    for key, value in OPCIONES_MENU.items():
+        print(f"{key}. {value}")
+
+
+def mostrar_materias_aprobadas(estado):
+    # Muestra las materias aprobadas del estudiante.
+    print("\n✅ Materias Aprobadas:")
+    if estado["aprobadas"]:
+        for materia in estado["aprobadas"]:
+            print(f"   - {materia}")
+    else:
+        print("❌ No tenés materias aprobadas.")
+
+
+def agregar_materias_aprobadas():
+    # Permite agregar nuevas materias aprobadas.
+    materias_input = input("📚 Ingresá materias aprobadas (separadas por coma): ").strip()
+    nuevas_materias = [m.strip() for m in materias_input.split(",") if m.strip()]
+    
+    if nuevas_materias:
+        agregar_aprobadas(nuevas_materias)
+        print("✅ Aprobadas actualizadas.")
+    else:
+        print("❌ No se ingresaron materias válidas.")
+
+
+def consultar_materia(estado):
+    # Consulta si se puede cursar una materia específica.
+    materia = input("🔍 Nombre de la materia: ").strip()
+    
+    if not materia:
+        print("⚠️ Debe ingresar un nombre de materia.")
+        return
+    
+    if puede_cursar(materia, estado["aprobadas"]):
+        print(f"✅ Podés cursar {materia}")
+    else:
+        print(f"❌ No podés cursar {materia} todavía.")
+
+
+def mostrar_materias_disponibles_por_anio(estado):
+    # Muestra las materias disponibles agrupadas por año.
+    materias_por_anio = materias_disponibles_por_anio(estado["aprobadas"])
+    
+    if materias_por_anio:
+        mostrar_materias_disponibles(materias_por_anio)
+    else:
+        print("❌ No hay materias disponibles para cursar.")
+
+
+def mostrar_materias_recomendadas(estado):
+    # Muestra las materias recomendadas para el estudiante.
+    recomendadas = recomendar_materias(estado["aprobadas"])
+    print("\n💡 Materias Recomendadas:\n")
+    if recomendadas:
+        for materia in recomendadas:
+            print(f"   ⭐ {materia}")
+    else:
+        print("\n❌ No hay materias recomendadas.")
+
+
+def procesar_opcion_menu(opcion, estado):
+    # Procesa la opción seleccionada del menú.
+    if opcion == "1":
+        mostrar_materias_aprobadas(estado)
+    elif opcion == "2":
+        agregar_materias_aprobadas()
+    elif opcion == "3":
+        consultar_materia(estado)
+    elif opcion == "4":
+        mostrar_materias_disponibles_por_anio(estado)
+    elif opcion == "5":
+        mostrar_materias_recomendadas(estado)
+    elif opcion == "6":
+        return False  # Señal para salir
+    else:
+        print("❌ Opción no válida.")
+    
+    return True  # Continuar en el bucle
 
 def main():
+    # Función principal del agente académico.
     estado = cargar_estado()
 
     chequear_inicio_cuatrimestre()
-    chequear_inscripcion_automatica()
+    chequear_inscripcion()
 
     while True:
         mostrar_menu()
-        opcion = input("Elegí una opción: ").strip()
-        estado = cargar_estado()
+        opcion = input("🎯 Elegí una opción: ").strip()
+        estado = cargar_estado()  # Recargar estado por si hubo cambios
 
-        if opcion == "1":
-            print("Aprobadas:")
-            if estado["aprobadas"]:
-                for m in estado["aprobadas"]:
-                    print(f"   - {m}")
-            else:
-                print("No tenés materias aprobadas.")
-
-        elif opcion == "2":
-            nuevas = input("Ingresá materias aprobadas (separadas por coma): ").strip().split(",")
-            nuevas = [n.strip() for n in nuevas if n.strip()]
-            agregar_aprobadas(nuevas)
-            print("Aprobadas actualizadas.")
-
-        elif opcion == "3":
-            mat = input("Nombre de la materia: ").strip()
-
-            print(f"Materia consultada: {mat}")
-            if puede_cursar(mat, estado["aprobadas"]):
-                print(f"Podés cursar {mat}")
-            else:
-                print(f"No podés cursar {mat} todavía.")
-
-        elif opcion == "4":
-            materias_por_anio = materias_disponibles_por_anio(estado["aprobadas"])
-
-            if materias_por_anio:
-                print("\nMaterias disponibles para cursar agrupadas por año:\n")
-                for anio, materias in materias_por_anio:
-                    if materias:
-                        print(f"Año {anio}:")
-                        for m in materias:
-                            print(f"   - {m}")
-            else:
-                print("No hay materias disponibles para cursar.")
-
-        elif opcion == "5":
-            rec = recomendar_materias(estado["aprobadas"])
-            print("Recomendadas:")
-            if rec:
-                for m in rec:
-                    print(f"   - {m}")
-            else:
-                print("No hay materias recomendadas.")
-
-        elif opcion == "6":
+        if not procesar_opcion_menu(opcion, estado):
             break
 
-        else:
-            print("Opción no válida.")
 
 if __name__ == "__main__":
     main()
