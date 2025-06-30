@@ -18,7 +18,7 @@
 
 ## ¿Qué es un Agente?
 
-Un **agente** es un sistema de software que analiza e interactua con su entorno que puede realizar una acciones teniendo en cuenta los datos recopilados.
+Un **agente** es un sistema de software que realiza acciones predefinidas interactuando con su entorno.
 
 ### Algunos ejemplos pueden ser:
 
