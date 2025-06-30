@@ -16,8 +16,8 @@ subset([X|Xs], L) :- member(X, L), subset(Xs, L).
 
 % Lista de materias que se pueden cursar y aún no fueron aprobadas
 materias_disponibles(Aprobadas, MateriasPosibles) :-
-    setof(M, puede_cursar(M, Aprobadas), Todas),
-    subtract(Todas, Aprobadas, MateriasPosibles).
+    setof(M, puede_cursar(M, Aprobadas), Todas), % obtiene todas las materias posibles
+    subtract(Todas, Aprobadas, MateriasPosibles). % elimina las ya aprobadas
 
 % Agrupa las materias disponibles por año
 materias_por_anio(Aprobadas, PorAnio) :-
