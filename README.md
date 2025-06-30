@@ -2,9 +2,12 @@
 
 ## ¿Qué es un Agente?
 
-Un **agente** es un programa que puede realizar una acción por sí mismo, sin que alguien tenga que decirle todo el tiempo qué hacer. Puede interactuar con su entorno y tomar decisiones.
+Un **agente** es un programa que puede realizar una acción por sí mismo, sin que
+alguien tenga que decirle todo el tiempo qué hacer. Puede interactuar con su
+entorno y tomar decisiones.
 
 ### Algunos ejemplos pueden ser:
+
 - Un robot que limpia la casa.
 - Un programa que recomienda películas.
 - Un termostato que ajusta solo la temperatura.
@@ -14,6 +17,7 @@ Un **agente** es un programa que puede realizar una acción por sí mismo, sin q
 ## ¿Qué es un Agente Inteligente?
 
 Un **agente inteligente** es un software que:
+
 - Ayuda a las personas.
 - Aprende de lo que hacemos.
 - Puede hacer tareas en nuestro nombre.
@@ -43,13 +47,15 @@ Un **agente inteligente** es un software que:
    Aprende de la experiencia y mejora su comportamiento.
 
 8. **Integridad**  
-   El usuario debe poder confiar en que actuará con sinceridad y en su beneficio.
+   El usuario debe poder confiar en que actuará con sinceridad y en su
+   beneficio.
 
 ---
 
 ## ¿Cómo se clasifican los Agentes?
 
 Se pueden clasificar según lo que pueden hacer:
+
 - Algunos solo hacen tareas simples.
 - Otros se comunican entre sí y cooperan.
 - Algunos aprenden con el tiempo y se adaptan a lo que necesitan los usuarios.
@@ -59,6 +65,7 @@ Se pueden clasificar según lo que pueden hacer:
 ## Ejemplo simple:
 
 Un agente inteligente podría ser el asistente de Spotify:
+
 - Aprende tus gustos musicales.
 - Te recomienda nuevas canciones.
 - Se adapta si un día preferís música más tranquila.
@@ -69,9 +76,99 @@ Un agente inteligente podría ser el asistente de Spotify:
 ## Diagrama (explicación)
 
 Imaginá un agente como un ayudante digital que:
+
 - Tiene sus propios objetivos.
 - Se comunica con otros ayudantes.
 - Aprende de lo que pasa a su alrededor.
 - Cambia su comportamiento si algo no funciona bien.
 
-Es como tener un software que trabaja por vos, entiende tus preferencias y se adapta.
+Es como tener un software que trabaja por vos, entiende tus preferencias y se
+adapta.
+
+# Práctica - Agente Académico Inteligente
+
+## Objetivo del proyecto
+
+El objetivo principal fue desarrollar una aproximación a agente inteligente
+académico que simule asistir a un estudiante en la gestión de sus materias de la
+facultad de la carreda de Licenciatura en Informática de la UNAHUR. Este agente
+puede:
+
+- Conocer el plan de estudios de la carrera.
+- Recordar qué materias tiene aprobadas.
+- Validar si puede cursar una materia según las correlativas.
+- Recomendar materias para cursar en función del año y las correlativas.
+- Avisar que es el principio del cuatrimestre e informar las materias
+  recomendadas para anotarse.
+- Simular inscripciones automáticas o manuales en la fecha de inscripción.
+
+Más allá de la funcionalidad práctica, que lejos está aun de poder ser usado en
+un entorno real, pusimos el foco en evidenciar el uso de Prolog como motor de
+inferencia dentro del agente.
+
+## El rol de Prolog
+
+Prolog funciona como el motor de inferencia, osea el responsable de aplicar
+reglas lógicas a un conjunto de hechos para tomar decisiones. En este proyecto:
+
+- Las materias y sus correlatividades están definidas como hechos y reglas de
+  Prolog.
+- Python consulta a Prolog para saber qué materias puede cursar y hasta qué
+  materias debería cursar según el estado actual del estudiante.
+- La lógica de la decisión académica (qué puede cursar, qué conviene, etc) es
+  razonada por Prolog, no por Python.
+
+## Componentes
+
+- `conocimiento.pl`: contiene los hechos sobre las materias, a qué año pertenece
+  cada una y las correlatividades.
+- `reglas.pl`: contiene el motor lógico del agente. Define reglas que permiten
+  verificar si se puede cursar una materia, conocer todas las disponibles,
+  conocer solo las aprobadas, agruparlas por año y recomendar materias
+  priorizando las de años menores y respetando las correlativas.
+- `prolog_interface.py`: Es el nexo entre Python y Prolog. A traves de la
+  librería `pyswip` podemos hacer consultas a Prolog encapsuladas en funciones
+  de python.
+- `main.py`: implementa el agente. Define su comportamiento autónomo, proactivo
+  y reactivo.
+- `estado.json`: guarda el estado del estudiante (materias aprobadas, flags).
+
+Este enfoque nos permite simular cómo se comportaría un agente y cómo se nutre
+de Prolog para poder operar.
+
+## Características del agente
+
+- Autonomía: toma decisiones sin intervención humana, por ejemplo recomendar e
+  inscribir en materias o dar avisos.
+- Reactividad: Responde al cambio del ambiente, por ejemplo al cambio de fechas
+  de inicio de cuatrimestre o de comienzo de inscripción.
+- Proactividad: sugiere acciones beneficiosas para el estudiante.
+- Basado en modelo: se apoya en un modelo lógico de conocimientos expresado en
+  Prolog.
+
+## Cómo correr el proyecto
+
+### Requisitos
+
+- Python
+- SWI-Prolog
+- pip (gestor de paquetes de Python)
+
+1. Crear entorno virtual
+
+```
+python -m venv venv
+source venv/bin/activate  # En Windows: venv\Scripts\activate
+```
+
+2. Instalar dependencias
+
+```
+pip install -r requirements.txt
+```
+
+3. Ejecutar el agente
+
+```
+python agente/main.py
+```
