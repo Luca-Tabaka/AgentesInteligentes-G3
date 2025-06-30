@@ -37,8 +37,6 @@ entorno y tomar decisiones.
 
 ## Estructura básica de un Agente Inteligente
 
----
-
 1. Entorno
 Es el ambiente en el cual actúa y se desenvuelve el agente. Puede tratarse de un entorno físico (como una fábrica o una casa) o digital (como una aplicación web o un sistema de recomendación). Todo lo que el agente percibe, analiza y modifica ocurre dentro de este entorno.
 
