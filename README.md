@@ -56,6 +56,15 @@ Permite que el agente aprenda de su experiencia. A través de técnicas de machi
 
 ---
 
+### Funcionamiento en pasos
+
+- Sensar entorno en el que esta empleando sensores propios
+- Procesa los datos recibidos del analisis del entorno
+- Evalua los datos teniendo en base a su programacion
+- Genera varios planes de accion para llegar a un objetivo
+- Selecciona el plan mas eficiente y lo ejecuta mediante actuadores
+- Almacena datos de la ejecucion para tenerlos en cuenta en futuras ejecuciones.
+
 ### Características de un Agente Inteligente:
 
 Un agente inteligente cuenta con caracteristicas que definen partes de su
