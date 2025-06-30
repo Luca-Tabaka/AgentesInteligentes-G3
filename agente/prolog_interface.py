@@ -7,6 +7,23 @@ BASE_PATH = Path(__file__).parent.parent / "logica"
 
 prolog.consult(str(BASE_PATH / "reglas.pl"))
 
+def todas_las_materias_por_anio():
+    consulta = "todas_las_materias_por_anio(R)."
+    for r in prolog.query(consulta):
+        resultados_crudos = r["R"]
+        resultados_parseados = []
+
+        for item in resultados_crudos:
+            try:
+                tupla = ast.literal_eval(item.lstrip("-"))
+                resultados_parseados.append(tupla)
+            except Exception as e:
+                print(f"[!] Error procesando: {item} -> {e}")
+        
+        return resultados_parseados
+
+    return []
+
 def materias_disponibles(aprobadas):
     aprobadas_str = "[" + ",".join(aprobadas) + "]"
     consulta = f"materias_disponibles({aprobadas_str}, R)."

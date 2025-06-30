@@ -9,7 +9,8 @@ from datetime import date, datetime
 from prolog_interface import (
     puede_cursar, 
     recomendar_materias, 
-    materias_disponibles_por_anio
+    materias_disponibles_por_anio,
+    todas_las_materias_por_anio
 )
 from utils import cargar_estado, agregar_aprobadas, guardar_estado
 
@@ -25,18 +26,19 @@ hoy = datetime(2025, 7, 5).date()  # Para pruebas - inicio inscripción
 
 # Opciones del menú principal
 OPCIONES_MENU = {
-    "1": "Ver materias aprobadas",
-    "2": "Agregar materias aprobadas", 
-    "3": "Consultar si puedo cursar una materia",
-    "4": "Ver materias disponibles por año",
-    "5": "Ver materias recomendadas",
-    "6": "Salir"
+    "1": "Ver plan de estudio",
+    "2": "Ver materias aprobadas",
+    "3": "Agregar materias aprobadas", 
+    "4": "Consultar si puedo cursar una materia",
+    "5": "Ver materias disponibles por año",
+    "6": "Ver materias recomendadas",
+    "7": "Salir"
 }
 
 
 def limpiar_consola():
     # Limpia la consola del terminal.
-    os.system('clear' if os.name == 'posix' else 'cls')
+    print("\033c", end="")
 
 
 def pausar():
@@ -89,6 +91,7 @@ def procesar_inscripcion_manual(estado):
 
     if inscriptas_validas:
         estado["inscriptas"] = inscriptas_validas
+        estado["inscripcion_registrada"] = True
         guardar_estado(estado)
         print(f"✅ Te inscribí a las materias válidas: {inscriptas_validas}")
     else:
@@ -127,7 +130,6 @@ def chequear_inscripcion():
     recomendadas = recomendar_materias(estado["aprobadas"])
 
     if materias_por_anio:
-        print("\n📚 Estas son las materias que podrías cursar:\n")
         mostrar_materias_disponibles(materias_por_anio)
 
     if not recomendadas:
@@ -136,6 +138,8 @@ def chequear_inscripcion():
 
     if not procesar_inscripcion_automatica(estado, recomendadas):
         procesar_inscripcion_manual(estado)
+
+    pausar()
 
 
 
@@ -146,6 +150,20 @@ def mostrar_menu():
     for key, value in OPCIONES_MENU.items():
         print(f"{key}. {value}")
 
+def mostrar_plan_estudio():
+    # Muestra el plan de estudio de la carrera.
+    print("\n📚 --- Plan de Estudio ---")
+    materias_por_anio = todas_las_materias_por_anio()
+
+    if materias_por_anio:
+        for anio, materias in materias_por_anio:
+            print(f"\n📅 Año {anio}:")
+            for materia in materias:
+                print(f"   - {materia}")
+    else:
+        print("❌ No hay materias en el Plan de estudio.")
+    
+    pausar()
 
 def mostrar_materias_aprobadas(estado):
     # Muestra las materias aprobadas del estudiante.
@@ -155,6 +173,7 @@ def mostrar_materias_aprobadas(estado):
             print(f"   - {materia}")
     else:
         print("❌ No tenés materias aprobadas.")
+
     pausar()
 
 
@@ -195,6 +214,8 @@ def mostrar_materias_disponibles_por_anio(estado):
     else:
         print("❌ No hay materias disponibles para cursar.")
 
+    pausar()
+
 
 def mostrar_materias_recomendadas(estado):
     # Muestra las materias recomendadas para el estudiante.
@@ -206,20 +227,24 @@ def mostrar_materias_recomendadas(estado):
     else:
         print("\n❌ No hay materias recomendadas.")
 
+    pausar()
+
 
 def procesar_opcion_menu(opcion, estado):
     # Procesa la opción seleccionada del menú.
     if opcion == "1":
+        mostrar_plan_estudio()
+    if opcion == "2":
         mostrar_materias_aprobadas(estado)
-    elif opcion == "2":
-        agregar_materias_aprobadas()
     elif opcion == "3":
-        consultar_materia(estado)
+        agregar_materias_aprobadas()
     elif opcion == "4":
-        mostrar_materias_disponibles_por_anio(estado)
+        consultar_materia(estado)
     elif opcion == "5":
-        mostrar_materias_recomendadas(estado)
+        mostrar_materias_disponibles_por_anio(estado)
     elif opcion == "6":
+        mostrar_materias_recomendadas(estado)
+    elif opcion == "7":
         return False  # Señal para salir
     else:
         print("❌ Opción no válida.")

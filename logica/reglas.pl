@@ -49,3 +49,14 @@ juntar_materias([], []).
 juntar_materias([_-Mats|Resto], Resultado) :-
     juntar_materias(Resto, RestoMats),
     append(Mats, RestoMats, Resultado).
+
+% Obtiene todas las materias agrupadas por año
+todas_las_materias_por_anio(Resultado) :-
+    findall(Anio, anio(_, Anio), AniosDuplicados),
+    sort(AniosDuplicados, Anios),
+    findall(Anio-Materias,
+        (
+            member(Anio, Anios),
+            findall(Materia, anio(Materia, Anio), Materias)
+        ),
+        Resultado).
