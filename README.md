@@ -12,9 +12,9 @@
 
 ---
 
-<img width="6323" alt="Agentes inteligentes (2)" src="https://github.com/user-attachments/assets/61afb348-404d-4a5e-aef3-54585d217a70" />
-
 # Agentes Inteligentes
+
+<img width="6323" alt="Agentes inteligentes (2)" src="https://github.com/user-attachments/assets/61afb348-404d-4a5e-aef3-54585d217a70" />
 
 ## ¿Qué es un Agente?
 
