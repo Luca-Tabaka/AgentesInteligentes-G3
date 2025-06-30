@@ -58,7 +58,7 @@ Permite que el agente aprenda de su experiencia. A través de técnicas de machi
 
 ### Funcionamiento en pasos
 
-- Sensar entorno en el que esta empleando sensores propios
+- Sensar entorno en el que se encuentra mediante sensores propios
 - Procesa los datos recibidos del analisis del entorno
 - Evalua los datos teniendo en base a su programacion
 - Genera varios planes de accion para llegar a un objetivo
