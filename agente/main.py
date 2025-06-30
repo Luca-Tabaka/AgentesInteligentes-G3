@@ -3,7 +3,6 @@ Agente Académico - Sistema de gestión académica inteligente
 Proporciona funcionalidades para gestionar materias, inscripciones y recomendaciones.
 """
 
-import os
 from datetime import date, datetime
 
 from prolog_interface import (
