@@ -6,7 +6,7 @@
 - Gabriel Ulises Bianglino
 - Nicolás Marcelo Cieri Salcedo
 - Luca Uriel Tabaka
-- Martina Gonzalo Salvatierra.
+- Martin Gonzalo Salvatierra.
 
 ---
 
