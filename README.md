@@ -64,29 +64,6 @@ Se pueden clasificar según sus capacidades:
 
 ---
 
-## Ejemplo simple:
-
-Un agente inteligente podría ser el asistente de Spotify (Sistema de recomendación):
-
-- Aprende tus gustos musicales.
-- Te recomienda nuevas canciones.
-- Se adapta si un día preferís música más tranquila.
-- Habla con otros sistemas para mostrarte eventos en tu ciudad.
-
----
-
-## Diagrama (explicación)
-
-Imaginá un agente como un ayudante digital que:
-
-- Tiene sus propios objetivos.
-- Se comunica con otros ayudantes.
-- Aprende de lo que pasa a su alrededor.
-- Cambia su comportamiento si algo no funciona bien.
-
-Es como tener un software que trabaja por vos, entiende tus preferencias y se
-adapta.
-
 # Práctica - Agente Académico Inteligente
 
 ## Objetivo del proyecto
