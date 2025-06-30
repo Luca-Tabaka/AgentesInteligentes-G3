@@ -10,7 +10,7 @@
 
 ---
 
-<img width="6323" alt="Agentes inteligentes (1)" src="https://github.com/user-attachments/assets/44f20eb8-d798-49af-8cde-e9627d0c4b3f" />
+<img width="6323" alt="Agentes inteligentes (2)" src="https://github.com/user-attachments/assets/61afb348-404d-4a5e-aef3-54585d217a70" />
 
 # Agentes Inteligentes
 
