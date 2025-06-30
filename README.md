@@ -24,16 +24,16 @@ entorno y tomar decisiones.
 * Los actuadores son los mecanismos que permiten al AI poder interactuar con el entorno. (Funcion que cambia las rutas dinamicamente en un GPS)
 ---
 ### Características de un Agente Inteligente:
-Un agente inteligente cuenta con caracteristicas que definen su comportamiento.
+Un agente inteligente cuenta con caracteristicas que definen partes de su comportamiento.
 
 * **Autonomía**  
    Puede actuar por su cuenta y controlar su estado interno sin necesidad de intervencion alguna.
 
 * **Reactividad**  
-   Está atento a su entorno y responde a los cambios rápidamente.
+   Analiza el entorno y responde a los cambios.
 
 * **Proactividad**  
-   Tiene objetivos propios y toma la iniciativa para cumplirlos.
+   Tiene objetivos propios y toma la iniciativa para cumplirlos sin ser impulsado por ningun evento.
 
 * **Habilidad social**  
    Puede comunicarse con otros agentes o personas.
@@ -42,30 +42,30 @@ Un agente inteligente cuenta con caracteristicas que definen su comportamiento.
    Trabaja junto con otros agentes para alcanzar objetivos.
 
 * **Razonamiento**  
-   Puede pensar y sacar conclusiones basadas en lo que sabe.
+   Puede pensar y sacar conclusiones basado en conocimientos previos.
 
 * **Adaptación**  
    Aprende de la experiencia y mejora su comportamiento.
 
 * **Integridad**  
-   El usuario debe poder confiar en que actuará con sinceridad y en su
-   beneficio.
+   Actua de forma honesta buscando el bienestar del usuario.
 
 ---
 
-## ¿Cómo se clasifican los Agentes?
+## Clasificacion de Agentes inteligentes
 
-Se pueden clasificar según lo que pueden hacer:
+Se pueden clasificar según sus capacidades:
 
-- Algunos solo hacen tareas simples.
-- Otros se comunican entre sí y cooperan.
-- Algunos aprenden con el tiempo y se adaptan a lo que necesitan los usuarios.
+* Agentes simples: programados para seguir reglas predefinidas en un entorno especifico.
+* Agentes basados en modelos: programados teniendo un estado interno que refleja elementos que no son visibles, este estado interno es llamado modelo de mundo y se usa para realizar cambios en estado actual.
+* Agentes basados en objetivos: programados teniendo en cuenta las caracteristicas de los agentes anteriores, tienen objetivos especificos los cuales logran mediante distintas acciones.
+* Agentes basados en el aprendizaje:
 
 ---
 
 ## Ejemplo simple:
 
-Un agente inteligente podría ser el asistente de Spotify:
+Un agente inteligente podría ser el asistente de Spotify (Sistema de recomendación):
 
 - Aprende tus gustos musicales.
 - Te recomienda nuevas canciones.
