@@ -3,6 +3,7 @@ Agente Académico - Sistema de gestión académica inteligente
 Proporciona funcionalidades para gestionar materias, inscripciones y recomendaciones.
 """
 
+import os
 from datetime import date, datetime
 
 from prolog_interface import (
@@ -31,6 +32,17 @@ OPCIONES_MENU = {
     "5": "Ver materias recomendadas",
     "6": "Salir"
 }
+
+
+def limpiar_consola():
+    # Limpia la consola del terminal.
+    os.system('clear' if os.name == 'posix' else 'cls')
+
+
+def pausar():
+    # Pausa la ejecución hasta que el usuario presione Enter.
+    input("\n📋 Presioná Enter para continuar...")
+
 
 def mostrar_materias_disponibles(materias_por_anio):
     # Muestra las materias disponibles agrupadas por año.
@@ -129,6 +141,7 @@ def chequear_inscripcion():
 
 def mostrar_menu():
     # Muestra el menú principal de opciones.
+    limpiar_consola()
     print("\n🤖 --- Agente Académico ---")
     for key, value in OPCIONES_MENU.items():
         print(f"{key}. {value}")
@@ -142,6 +155,7 @@ def mostrar_materias_aprobadas(estado):
             print(f"   - {materia}")
     else:
         print("❌ No tenés materias aprobadas.")
+    pausar()
 
 
 def agregar_materias_aprobadas():
@@ -154,6 +168,7 @@ def agregar_materias_aprobadas():
         print("✅ Aprobadas actualizadas.")
     else:
         print("❌ No se ingresaron materias válidas.")
+    pausar()
 
 
 def consultar_materia(estado):
@@ -168,6 +183,7 @@ def consultar_materia(estado):
         print(f"✅ Podés cursar {materia}")
     else:
         print(f"❌ No podés cursar {materia} todavía.")
+    pausar()
 
 
 def mostrar_materias_disponibles_por_anio(estado):
