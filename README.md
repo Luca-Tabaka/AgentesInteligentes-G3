@@ -22,7 +22,7 @@ entorno y tomar decisiones.
 
 * Los sensores pueden ser fisicos (Microfonos, medidores de temperatura) o virtuales(Sensor que lee los cambios en una aplicacion).
 * Los actuadores son los mecanismos que permiten al AI poder interactuar con el entorno. (Funcion que cambia las rutas dinamicamente en un GPS)
-
+---
 ### Características de un Agente Inteligente:
 Un agente inteligente cuenta con caracteristicas que definen su comportamiento.
 
