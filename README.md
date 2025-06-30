@@ -1,5 +1,6 @@
+# Grupo tres
+Integrantes: Ariel Martin Nuñez, Gabriel Ulises Bianglino, Nicolás Marcelo Cieri Salcedo, Luca Uriel Tabaka, Martina Gonzalo Salvatierra.
 # Agentes Inteligentes
-# H1 Grupo tres
 ## ¿Qué es un Agente?
 
 Un **agente** es un programa que puede realizar una acción por sí mismo, sin que
