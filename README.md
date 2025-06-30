@@ -87,7 +87,7 @@ inferencia dentro del agente.
 
 ## El rol de Prolog
 
-Prolog funciona como el motor de inferencia, osea el responsable de aplicar
+Prolog tiene internamente un motor de inferencia, el cuál es el responsable de aplicar
 reglas lógicas a un conjunto de hechos para tomar decisiones. En este proyecto:
 
 - Las materias y sus correlatividades están definidas como hechos y reglas de
