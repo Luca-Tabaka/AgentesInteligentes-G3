@@ -1,4 +1,4 @@
-# Grupo tres
+# Grupo 3
 Integrantes: Ariel Martin Nuñez, Gabriel Ulises Bianglino, Nicolás Marcelo Cieri Salcedo, Luca Uriel Tabaka, Martina Gonzalo Salvatierra.
 ---
 
