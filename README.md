@@ -26,28 +26,28 @@ entorno y tomar decisiones.
 ### Características de un Agente Inteligente:
 Un agente inteligente cuenta con caracteristicas que definen su comportamiento.
 
-1. **Autonomía**  
-   Puede actuar por su cuenta y controlar su estado interno.
+* **Autonomía**  
+   Puede actuar por su cuenta y controlar su estado interno sin necesidad de intervencion alguna.
 
-2. **Reactividad**  
+* **Reactividad**  
    Está atento a su entorno y responde a los cambios rápidamente.
 
-3. **Proactividad**  
+* **Proactividad**  
    Tiene objetivos propios y toma la iniciativa para cumplirlos.
 
-4. **Habilidad social**  
+* **Habilidad social**  
    Puede comunicarse con otros agentes o personas.
 
-5. **Cooperación**  
+* **Cooperación**  
    Trabaja junto con otros agentes para alcanzar objetivos.
 
-6. **Razonamiento**  
+* **Razonamiento**  
    Puede pensar y sacar conclusiones basadas en lo que sabe.
 
-7. **Adaptación**  
+* **Adaptación**  
    Aprende de la experiencia y mejora su comportamiento.
 
-8. **Integridad**  
+* **Integridad**  
    El usuario debe poder confiar en que actuará con sinceridad y en su
    beneficio.
 
