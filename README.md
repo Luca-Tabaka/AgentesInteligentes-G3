@@ -20,16 +20,11 @@ entorno y tomar decisiones.
 ## ¿Qué es un Agente Inteligente?
 * Un agente inteligente(AI) es un sistema de software creado para poder interactuar con su entorno, percibiendolo mediante sensores con los cuales procesa informacion la cual utiliza para y actuar sobre el con el uso de actuadores.
 
-*Los sensores pueden ser fisicos (Microfonos, medidores de temperatura) o virtuales(Sensor que lee los cambios en una aplicacion).
-
-Un **agente inteligente** es un software que:
-
-- Ayuda a las personas.
-- Aprende de lo que hacemos.
-- Puede hacer tareas en nuestro nombre.
-- Toma decisiones de forma autónoma, es decir, por si mismo.
+* Los sensores pueden ser fisicos (Microfonos, medidores de temperatura) o virtuales(Sensor que lee los cambios en una aplicacion).
+* Los actuadores son los mecanismos que permiten al AI poder interactuar con el entorno. (Funcion que cambia las rutas dinamicamente en un GPS)
 
 ### Características de un Agente Inteligente:
+Un agente inteligente cuenta con caracteristicas que definen su comportamiento.
 
 1. **Autonomía**  
    Puede actuar por su cuenta y controlar su estado interno.
