@@ -65,7 +65,7 @@ Permite que el agente aprenda de su experiencia. A través de técnicas de machi
 - Selecciona el plan mas eficiente y lo ejecuta mediante actuadores
 - Almacena datos de la ejecucion para tenerlos en cuenta en futuras ejecuciones.
 
-### Características de un Agente Inteligente:
+## Características de un Agente Inteligente:
 
 Un agente inteligente cuenta con caracteristicas que definen partes de su
 comportamiento.
