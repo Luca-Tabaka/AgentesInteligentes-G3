@@ -57,9 +57,10 @@ Un agente inteligente cuenta con caracteristicas que definen partes de su compor
 Se pueden clasificar según sus capacidades:
 
 * Agentes simples: programados para seguir reglas predefinidas en un entorno especifico.
-* Agentes basados en modelos: programados teniendo un estado interno que refleja elementos que no son visibles, este estado interno es llamado modelo de mundo y se usa para realizar cambios en estado actual.
+* Agentes basados en modelos: tienen un estado interno que refleja elementos que no son visibles, este estado interno es llamado modelo de mundo y se usa para realizar cambios en estado actual.
 * Agentes basados en objetivos: programados teniendo en cuenta las caracteristicas de los agentes anteriores, tienen objetivos especificos los cuales logran mediante distintas acciones.
-* Agentes basados en el aprendizaje:
+* Agentes basados en el aprendizaje: utilizan tecnicas de aprendizaje para mejorar su toma de decisiones.
+* Agentes basados en utilidades: tiene un modelo de mundo el cual utiliza junto a una funcion de utilidad(calcula preferencias entre estados) para poder seleccionar una accion que lleve al mejor estado posible.
 
 ---
 
