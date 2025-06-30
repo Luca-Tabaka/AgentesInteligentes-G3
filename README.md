@@ -1,10 +1,19 @@
 # Grupo 3
-Integrantes: Ariel Martin Nuñez, Gabriel Ulises Bianglino, Nicolás Marcelo Cieri Salcedo, Luca Uriel Tabaka, Martina Gonzalo Salvatierra.
+
+### Integrantes:
+
+- Ariel Martin Nuñez
+- Gabriel Ulises Bianglino
+- Nicolás Marcelo Cieri Salcedo
+- Luca Uriel Tabaka
+- Martina Gonzalo Salvatierra.
+
 ---
+
 <img width="6323" alt="Agentes inteligentes (1)" src="https://github.com/user-attachments/assets/44f20eb8-d798-49af-8cde-e9627d0c4b3f" />
 
-
 # Agentes Inteligentes
+
 ## ¿Qué es un Agente?
 
 Un **agente** es un programa que puede realizar una acción por sí mismo, sin que
@@ -20,36 +29,48 @@ entorno y tomar decisiones.
 ---
 
 ## ¿Qué es un Agente Inteligente?
-* Un agente inteligente(AI) es un sistema de software creado para poder interactuar con su entorno, percibiendolo mediante sensores con los cuales procesa informacion la cual utiliza para y actuar sobre el con el uso de actuadores.
 
-* Los sensores pueden ser fisicos (Microfonos, medidores de temperatura) o virtuales(Sensor que lee los cambios en una aplicacion).
-* Los actuadores son los mecanismos que permiten al AI poder interactuar con el entorno. (Funcion que cambia las rutas dinamicamente en un GPS)
+- Un agente inteligente(AI) es un sistema de software creado para poder
+  interactuar con su entorno, percibiendolo mediante sensores con los cuales
+  procesa informacion la cual utiliza para y actuar sobre el con el uso de
+  actuadores.
+
+- Los sensores pueden ser fisicos (Microfonos, medidores de temperatura) o
+  virtuales(Sensor que lee los cambios en una aplicacion).
+- Los actuadores son los mecanismos que permiten al AI poder interactuar con el
+  entorno. (Funcion que cambia las rutas dinamicamente en un GPS)
+
 ---
+
 ### Características de un Agente Inteligente:
-Un agente inteligente cuenta con caracteristicas que definen partes de su comportamiento.
 
-* **Autonomía**  
-   Puede actuar por su cuenta y controlar su estado interno sin necesidad de intervencion alguna.
+Un agente inteligente cuenta con caracteristicas que definen partes de su
+comportamiento.
 
-* **Reactividad**  
+- **Autonomía**  
+   Puede actuar por su cuenta y controlar su estado interno sin necesidad de intervencion
+  alguna.
+
+- **Reactividad**  
    Analiza el entorno y responde a los cambios.
 
-* **Proactividad**  
-   Tiene objetivos propios y toma la iniciativa para cumplirlos sin ser impulsado por ningun evento.
+- **Proactividad**  
+   Tiene objetivos propios y toma la iniciativa para cumplirlos sin ser impulsado
+  por ningun evento.
 
-* **Habilidad social**  
+- **Habilidad social**  
    Puede comunicarse con otros agentes o personas.
 
-* **Cooperación**  
+- **Cooperación**  
    Trabaja junto con otros agentes para alcanzar objetivos.
 
-* **Razonamiento**  
+- **Razonamiento**  
    Puede pensar y sacar conclusiones basado en conocimientos previos.
 
-* **Adaptación**  
+- **Adaptación**  
    Aprende de la experiencia y mejora su comportamiento.
 
-* **Integridad**  
+- **Integridad**  
    Actua de forma honesta buscando el bienestar del usuario.
 
 ---
@@ -58,11 +79,19 @@ Un agente inteligente cuenta con caracteristicas que definen partes de su compor
 
 Se pueden clasificar según sus capacidades:
 
-* Agentes simples: programados para seguir reglas predefinidas en un entorno especifico.
-* Agentes basados en modelos: tienen un estado interno que refleja elementos que no son visibles, este estado interno es llamado modelo de mundo y se usa para realizar cambios en estado actual.
-* Agentes basados en objetivos: programados teniendo en cuenta las caracteristicas de los agentes anteriores, tienen objetivos especificos los cuales logran mediante distintas acciones.
-* Agentes basados en el aprendizaje: utilizan tecnicas de aprendizaje para mejorar su toma de decisiones.
-* Agentes basados en utilidades: tiene un modelo de mundo el cual utiliza junto a una funcion de utilidad(calcula preferencias entre estados) para poder seleccionar una accion que lleve al mejor estado posible.
+- Agentes simples: programados para seguir reglas predefinidas en un entorno
+  especifico.
+- Agentes basados en modelos: tienen un estado interno que refleja elementos que
+  no son visibles, este estado interno es llamado modelo de mundo y se usa para
+  realizar cambios en estado actual.
+- Agentes basados en objetivos: programados teniendo en cuenta las
+  caracteristicas de los agentes anteriores, tienen objetivos especificos los
+  cuales logran mediante distintas acciones.
+- Agentes basados en el aprendizaje: utilizan tecnicas de aprendizaje para
+  mejorar su toma de decisiones.
+- Agentes basados en utilidades: tiene un modelo de mundo el cual utiliza junto
+  a una funcion de utilidad(calcula preferencias entre estados) para poder
+  seleccionar una accion que lleve al mejor estado posible.
 
 ---
 
@@ -89,8 +118,9 @@ inferencia dentro del agente.
 
 ## El rol de Prolog
 
-Prolog tiene internamente un motor de inferencia, el cuál es el responsable de aplicar
-reglas lógicas a un conjunto de hechos para tomar decisiones. En este proyecto:
+Prolog tiene internamente un motor de inferencia, el cuál es el responsable de
+aplicar reglas lógicas a un conjunto de hechos para tomar decisiones. En este
+proyecto:
 
 - Las materias y sus correlatividades están definidas como hechos y reglas de
   Prolog.
