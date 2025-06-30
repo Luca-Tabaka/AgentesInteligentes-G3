@@ -1,5 +1,7 @@
 # Grupo tres
 Integrantes: Ariel Martin Nuñez, Gabriel Ulises Bianglino, Nicolás Marcelo Cieri Salcedo, Luca Uriel Tabaka, Martina Gonzalo Salvatierra.
+---
+
 # Agentes Inteligentes
 ## ¿Qué es un Agente?
 
