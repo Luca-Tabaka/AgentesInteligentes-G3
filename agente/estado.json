@@ -1,22 +1,19 @@
 {
   "aprobadas": [
-    "estructuras_de_datos",
-    "nuevos_entornos_y_lenguajes",
-    "ingles_ii",
-    "programacion_con_objetos_i",
-    "programacion_con_objetos_ii",
-    "organizacion_de_computadoras",
-    "unahur_i",
-    "matematica_i",
-    "matematica_ii",
     "introduccion_a_la_programacion",
-    "bases_de_datos",
-    "sistemas_operativos",
-    "ingles_i",
-    "redes_de_computadoras",
-    "logica_y_programacion"
+    "programacion_con_objetos_i",
+    "unahur_i",
+    "nuevos_entornos_y_lenguajes",
+    "organizacion_de_computadoras",
+    "estructuras_de_datos",
+    "matematica_i"
   ],
-  "inscriptas": [],
-  "inscripcion_registrada": true,
+  "inscriptas": [
+    "bases_de_datos",
+    "ingles_i",
+    "matematica_ii",
+    "programacion_con_objetos_ii"
+  ],
+  "inscripcion_registrada": false,
   "aviso_cuatrimestre_enviado": false
 }

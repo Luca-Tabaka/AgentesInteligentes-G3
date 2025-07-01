@@ -20,8 +20,8 @@ FIN_INSCRIPCION = date(2025, 7, 10)
 
 # Configuración de fecha actual para pruebas
 # hoy = date.today()
-# hoy = datetime(2025, 7, 1).date()  # Para pruebas - inicio cuatrimestre
-hoy = datetime(2025, 7, 5).date()  # Para pruebas - inicio inscripción
+hoy = datetime(2025, 7, 1).date()  # Para pruebas - inicio cuatrimestre
+# hoy = datetime(2025, 7, 5).date()  # Para pruebas - inicio inscripción
 
 # Opciones del menú principal
 OPCIONES_MENU = {
@@ -96,6 +96,8 @@ def procesar_inscripcion_manual(estado):
     else:
         print("😞 No te pude inscribir a ninguna materia.")
 
+    pausar()
+
 
 def chequear_inicio_cuatrimestre():
     # Verifica si es el inicio del cuatrimestre y muestra materias disponibles.
@@ -108,6 +110,8 @@ def chequear_inicio_cuatrimestre():
         
         estado["aviso_cuatrimestre_enviado"] = True
         guardar_estado(estado)
+
+        pausar()
 
 
 def chequear_inscripcion():
