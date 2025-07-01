@@ -1,3 +1,5 @@
+# Lógica y Programación
+
 # Grupo 3
 
 ### Integrantes:
@@ -10,15 +12,13 @@
 
 ---
 
-<img width="6323" alt="Agentes inteligentes (1)" src="https://github.com/user-attachments/assets/44f20eb8-d798-49af-8cde-e9627d0c4b3f" />
-
 # Agentes Inteligentes
+
+<img width="6323" alt="Agentes inteligentes (2)" src="https://github.com/user-attachments/assets/61afb348-404d-4a5e-aef3-54585d217a70" />
 
 ## ¿Qué es un Agente?
 
-Un **agente** es un programa que puede realizar una acción por sí mismo, sin que
-alguien tenga que decirle todo el tiempo qué hacer. Puede interactuar con su
-entorno y tomar decisiones.
+Un **agente** es un sistema de software que realiza acciones predefinidas interactuando con su entorno.
 
 ### Algunos ejemplos pueden ser:
 
@@ -35,14 +35,35 @@ entorno y tomar decisiones.
   procesa informacion la cual utiliza para y actuar sobre el con el uso de
   actuadores.
 
-- Los sensores pueden ser fisicos (Microfonos, medidores de temperatura) o
-  virtuales(Sensor que lee los cambios en una aplicacion).
-- Los actuadores son los mecanismos que permiten al AI poder interactuar con el
-  entorno. (Funcion que cambia las rutas dinamicamente en un GPS)
+## Estructura básica de un Agente Inteligente
+
+1. Entorno
+Es el ambiente en el cual actúa y se desenvuelve el agente. Puede tratarse de un entorno físico (como una fábrica o una casa) o digital (como una aplicación web o un sistema de recomendación). Todo lo que el agente percibe, analiza y modifica ocurre dentro de este entorno.
+
+2. Sensores
+Son los instrumentos que permiten al agente percibir el mundo que lo rodea. Estos pueden ser físicos (como cámaras, micrófonos, sensores de temperatura) o digitales (como APIs, entradas de usuario o logs del sistema). A través de los sensores, el agente recolecta información del entorno para poder actuar de forma informada.
+
+3. Actuadores
+Son los mecanismos mediante los cuales el agente interactúa con su entorno. En un robot, por ejemplo, los actuadores pueden ser motores o brazos robóticos. En un agente digital, pueden ser interfaces gráficas, respuestas por texto, comandos enviados a otros sistemas, etc.
+
+4. Mecanismo de razonamiento
+Este componente es el "cerebro" del agente. Toma la información captada por los sensores, la analiza y decide qué acción realizar utilizando los actuadores. Este proceso de toma de decisiones puede basarse en reglas lógicas, algoritmos de búsqueda, razonamiento probabilístico o técnicas de inteligencia artificial más avanzadas como el aprendizaje automático.
+
+5. Sistema de aprendizaje
+Permite que el agente aprenda de su experiencia. A través de técnicas de machine learning, el agente puede mejorar su rendimiento con el tiempo, adaptarse a nuevos entornos y resolver problemas más complejos. Este componente crea un bucle de retroalimentación donde el agente ajusta su comportamiento en base a los resultados obtenidos.
 
 ---
 
-### Características de un Agente Inteligente:
+### Funcionamiento en pasos
+
+- Sensar entorno en el que se encuentra mediante sensores propios
+- Procesa los datos recibidos del analisis del entorno
+- Evalua los datos teniendo en base a su programacion
+- Genera varios planes de accion para llegar a un objetivo
+- Selecciona el plan mas eficiente y lo ejecuta mediante actuadores
+- Almacena datos de la ejecucion para tenerlos en cuenta en futuras ejecuciones.
+
+## Características de un Agente Inteligente
 
 Un agente inteligente cuenta con caracteristicas que definen partes de su
 comportamiento.
